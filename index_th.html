@@ -1,0 +1,1902 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แฟ้มสะสมผลงาน ก่อบุญ คงศรี (อองรี) | Data Scientist Intern</title>
+  <meta name="description" content="แฟ้มสะสมผลงานของ ก่อบุญ คงศรี (อองรี) - บัณฑิตมหาวิทยาลัยเกษตรศาสตร์ สมัครตำแหน่งฝึกงานด้านวิทยาศาสตร์ข้อมูล (Data Scientist Intern) เชี่ยวชาญ Python, SQL, Machine Learning, Computer Vision, PowerBI, Tableau">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-sans: 'Prompt', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --bg-primary: #0b0f19;
+      --bg-secondary: #111827;
+      --bg-card: rgba(17, 24, 39, 0.75);
+      --bg-card-hover: rgba(30, 41, 59, 0.85);
+      --bg-glass: rgba(15, 23, 42, 0.85);
+      --border-color: #1e293b;
+      --border-accent: rgba(16, 185, 129, 0.3);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent-ku: #059669;
+      --accent-ku-light: #10b981;
+      --accent-ku-subtle: rgba(16, 185, 129, 0.12);
+      --accent-cyan: #0284c7;
+      --accent-cyan-light: #38bdf8;
+      --accent-cyan-subtle: rgba(56, 189, 248, 0.12);
+      --accent-gold: #f59e0b;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+      --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+      --shadow-glow: 0 0 25px rgba(16, 185, 129, 0.2);
+      --badge-bg: #1e293b;
+      --badge-border: #334155;
+    }
+
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-card: rgba(255, 255, 255, 0.9);
+      --bg-card-hover: rgba(241, 245, 249, 0.95);
+      --bg-glass: rgba(255, 255, 255, 0.88);
+      --border-color: #e2e8f0;
+      --border-accent: rgba(5, 150, 105, 0.3);
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      --accent-ku: #006642;
+      --accent-ku-light: #059669;
+      --accent-ku-subtle: rgba(0, 102, 66, 0.08);
+      --accent-cyan: #0369a1;
+      --accent-cyan-light: #0284c7;
+      --accent-cyan-subtle: rgba(2, 132, 199, 0.08);
+      --accent-gold: #d97706;
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+      --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+      --shadow-glow: 0 0 25px rgba(0, 102, 66, 0.15);
+      --badge-bg: #f1f5f9;
+      --badge-border: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ambient-glow {
+      position: fixed;
+      top: -150px;
+      right: -100px;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(2, 132, 199, 0.08) 50%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(60px);
+    }
+
+    .ambient-glow-2 {
+      position: fixed;
+      bottom: -100px;
+      left: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(2, 132, 199, 0.12) 0%, rgba(16, 185, 129, 0.06) 50%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(60px);
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: var(--bg-glass);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      object-fit: contain;
+      background: #ffffff;
+      padding: 3px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .brand-tag {
+      font-size: 0.75rem;
+      color: var(--accent-ku-light);
+      font-weight: 600;
+    }
+
+    nav.nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      border-radius: 20px;
+      padding: 3px;
+    }
+
+    .lang-btn {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 16px;
+      transition: all 0.2s;
+    }
+
+    .lang-btn.active {
+      background: var(--accent-ku);
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(5, 150, 105, 0.35);
+    }
+
+    .theme-toggle-btn {
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--text-primary);
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.05rem;
+    }
+
+    .print-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+
+    .print-btn:hover {
+      color: var(--text-primary);
+      border-color: var(--accent-cyan-light);
+    }
+
+    section.hero {
+      padding: 64px 0 48px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-avatar-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-avatar-frame {
+      position: relative;
+      width: 270px;
+      height: 340px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 2px solid var(--border-accent);
+      box-shadow: var(--shadow-glow), var(--shadow-lg);
+      background: var(--bg-secondary);
+    }
+
+    .hero-avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero-avatar-badge {
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-card);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-accent);
+      padding: 6px 16px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      box-shadow: var(--shadow-md);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent-ku-light);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent-ku-light);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.6; }
+    }
+
+    .hero-status-text {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hero-pre-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-ku-subtle);
+      color: var(--accent-ku-light);
+      border: 1px solid var(--border-accent);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      width: fit-content;
+    }
+
+    .hero-pre-badge img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+
+    .hero-title {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-ku-light) 60%, var(--accent-cyan-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .hero-contact-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 8px 0;
+    }
+
+    .contact-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      padding: 8px 16px;
+      border-radius: 12px;
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .contact-chip:hover {
+      border-color: var(--accent-ku-light);
+      background: var(--accent-ku-subtle);
+      transform: translateY(-2px);
+    }
+
+    .contact-chip svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      color: var(--accent-ku-light);
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-ku) 0%, var(--accent-ku-light) 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-cyan-light);
+      background: var(--accent-cyan-subtle);
+      transform: translateY(-2px);
+    }
+
+    .section-header {
+      margin-bottom: 32px;
+    }
+
+    .section-tag {
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--accent-ku-light);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 1.85rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: var(--shadow-md);
+      transition: all 0.25s ease;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .card:hover {
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+      box-shadow: var(--shadow-lg);
+    }
+
+    section.about-section {
+      padding: 48px 0;
+    }
+
+    .about-card {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .quote-box {
+      border-left: 4px solid var(--accent-ku-light);
+      padding-left: 20px;
+      font-size: 1.08rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-style: normal;
+    }
+
+    .traits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .trait-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: var(--badge-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+    }
+
+    .trait-icon {
+      font-size: 1.35rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--accent-ku-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .trait-title {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--text-primary);
+    }
+
+    .trait-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    section.education-section {
+      padding: 36px 0;
+    }
+
+    .education-card {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .edu-logo-wrapper {
+      width: 100px;
+      height: 100px;
+      border-radius: 20px;
+      background: #ffffff;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      flex-shrink: 0;
+    }
+
+    .edu-logo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .edu-content {
+      flex: 1;
+    }
+
+    .edu-degree {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .edu-institution {
+      font-size: 1.05rem;
+      color: var(--accent-ku-light);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .edu-details {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    section.skills-section {
+      padding: 48px 0;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .skill-category-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: var(--text-primary);
+    }
+
+    .skill-category-title span.badge-counter {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: var(--accent-ku-subtle);
+      color: var(--accent-ku-light);
+      font-weight: 600;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: 12px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .skill-pill.highlight {
+      border-color: var(--accent-ku-light);
+      background: var(--accent-ku-subtle);
+      color: var(--accent-ku-light);
+    }
+
+    .skill-pill.cyan {
+      border-color: var(--accent-cyan-light);
+      background: var(--accent-cyan-subtle);
+      color: var(--accent-cyan-light);
+    }
+
+    section.projects-section {
+      padding: 48px 0;
+    }
+
+    .project-featured-card {
+      border: 1px solid var(--border-accent);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-featured-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-ku-light), var(--accent-cyan-light));
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .project-badge {
+      background: var(--accent-cyan-subtle);
+      color: var(--accent-cyan-light);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .project-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 6px;
+    }
+
+    .project-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .pipeline-container {
+      background: var(--badge-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .pipeline-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+
+    .pipeline-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      position: relative;
+    }
+
+    .pipeline-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .step-number {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-ku-light);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .step-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .step-desc {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .project-tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tech-tag {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      padding: 4px 10px;
+      border-radius: 8px;
+      color: var(--text-secondary);
+    }
+
+    section.activities-section {
+      padding: 48px 0;
+    }
+
+    .spotlight-winner-card {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(16, 185, 129, 0.12) 100%);
+      border: 2px solid var(--accent-gold);
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 32px;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 28px;
+      align-items: center;
+      box-shadow: 0 8px 30px rgba(245, 158, 11, 0.18);
+    }
+
+    .spotlight-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.2);
+      color: var(--accent-gold);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    .spotlight-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .spotlight-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .spotlight-photo-frame {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid rgba(245, 158, 11, 0.35);
+      cursor: pointer;
+      aspect-ratio: 4 / 3;
+    }
+
+    .spotlight-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .spotlight-photo-frame:hover img {
+      transform: scale(1.05);
+    }
+
+    .spotlight-photo-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+      padding: 12px 14px;
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .activity-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .activity-preview-thumb {
+      width: 100%;
+      height: 180px;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .activity-preview-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .activity-preview-thumb:hover img {
+      transform: scale(1.06);
+    }
+
+    .activity-thumb-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(4px);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .activity-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      background: var(--accent-ku-subtle);
+      border: 1px solid var(--border-accent);
+    }
+
+    .activity-role {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .activity-period {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent-ku-light);
+      margin-bottom: 12px;
+    }
+
+    .activity-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .activity-skills-badge {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+
+    .micro-badge {
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: var(--badge-bg);
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+    }
+
+    .gallery-container {
+      margin-top: 36px;
+    }
+
+    .gallery-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .gallery-title-box h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .gallery-title-box p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .gallery-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-btn {
+      background: var(--badge-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--accent-ku);
+      color: #ffffff;
+      border-color: var(--accent-ku);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      aspect-ratio: 4 / 3;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent-ku-light);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.85) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 14px;
+      color: #ffffff;
+      opacity: 0.92;
+      transition: opacity 0.2s;
+    }
+
+    .gallery-item-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-ku-light);
+      margin-bottom: 2px;
+    }
+
+    .gallery-item-caption {
+      font-size: 0.82rem;
+      font-weight: 600;
+      line-height: 1.35;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(5, 8, 15, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .lightbox-content-wrapper {
+      max-width: 900px;
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+      position: relative;
+    }
+
+    .lightbox-img-box {
+      width: 100%;
+      max-height: 70vh;
+      background: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .lightbox-img-box img {
+      max-width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    .lightbox-footer {
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-card);
+    }
+
+    .lightbox-caption-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .lightbox-close-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.7);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .lightbox-close-btn:hover {
+      background: rgba(220, 38, 38, 0.85);
+    }
+
+    section.contact-section {
+      padding: 56px 0;
+    }
+
+    .cta-card {
+      text-align: center;
+      padding: 48px 32px;
+      background: linear-gradient(180deg, var(--bg-card) 0%, rgba(5, 150, 105, 0.06) 100%);
+      border: 1px solid var(--border-accent);
+    }
+
+    .cta-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .cta-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 28px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    footer.site-footer {
+      border-top: 1px solid var(--border-color);
+      padding: 32px 0;
+      margin-top: auto;
+      background: var(--bg-secondary);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-copy {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-primary);
+    }
+
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 11pt;
+      }
+      .site-header, .ambient-glow, .ambient-glow-2, .hero-cta-group, .cta-buttons, .lang-switcher, .theme-toggle-btn, .print-btn, .lightbox-modal, .gallery-filters {
+        display: none !important;
+      }
+      .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+      .card, .spotlight-winner-card {
+        background: #ffffff !important;
+        border: 1px solid #cccccc !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+        margin-bottom: 12pt;
+        padding: 14pt !important;
+      }
+      .hero-grid {
+        grid-template-columns: 180px 1fr !important;
+        gap: 20px !important;
+      }
+      .hero-avatar-frame {
+        width: 160px !important;
+        height: 200px !important;
+      }
+      .hero-title {
+        font-size: 18pt !important;
+      }
+      a {
+        color: #000000 !important;
+        text-decoration: none !important;
+      }
+    }
+
+    @media (max-width: 840px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-avatar-wrapper {
+        margin-bottom: 12px;
+      }
+      .hero-pre-badge, .hero-contact-strip, .hero-cta-group {
+        justify-content: center;
+      }
+      nav.nav-links {
+        display: none;
+      }
+      .education-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .spotlight-winner-card {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient-glow" aria-hidden="true"></div>
+  <div class="ambient-glow-2" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#top" class="brand">
+        <img src="ku-logo.png" alt="ตราสัญลักษณ์มหาวิทยาลัยเกษตรศาสตร์" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-name">ก่อบุญ คงศรี</span>
+          <span class="brand-tag">นักศึกษาฝึกงานด้าน Data Science</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#about" class="nav-link">เกี่ยวกับฉัน</a>
+        <a href="#education" class="nav-link">การศึกษา</a>
+        <a href="#skills" class="nav-link">ทักษะ</a>
+        <a href="#project" class="nav-link">ผลงานโปรเจกต์</a>
+        <a href="#activities" class="nav-link">กิจกรรมและผลงาน</a>
+        <a href="#gallery" class="nav-link">ประมวลภาพกิจกรรม</a>
+        <a href="#contact" class="nav-link">ติดต่อ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang-switcher" role="group" aria-label="Language Switcher">
+          <a href="index_en.html" class="lang-btn">EN</a>
+          <a href="index_th.html" class="lang-btn active">TH</a>
+        </div>
+
+        <button type="button" class="theme-toggle-btn" id="theme-btn" onclick="toggleTheme()" title="สลับโหมดมืด/สว่าง" aria-label="สลับโหมดการแสดงผล">
+          <span id="theme-icon">🌙</span>
+        </button>
+
+        <button type="button" class="print-btn" onclick="window.print()" title="พิมพ์ / บันทึก PDF" aria-label="พิมพ์เรซูเม่">
+          🖨️
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-avatar-wrapper">
+          <div class="hero-avatar-frame">
+            <img src="profile-picture.png" alt="ก่อบุญ คงศรี (อองรี)" class="hero-avatar-img">
+          </div>
+          <div class="hero-avatar-badge">
+            <span class="status-dot"></span>
+            <span class="hero-status-text">พร้อมสำหรับการฝึกงาน</span>
+          </div>
+        </div>
+
+        <div class="hero-content">
+          <div class="hero-pre-badge">
+            <img src="ku-logo.png" alt="ตรามหาวิทยาลัยเกษตรศาสตร์">
+            <span>บัณฑิตมหาวิทยาลัยเกษตรศาสตร์</span>
+          </div>
+
+          <h1 class="hero-title">
+            สวัสดีครับ ผม <span class="gradient-text">ก่อบุญ คงศรี</span>
+            <span style="font-weight: 500; font-size: 1.9rem; display: block;">(อองรี / Henry)</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            ผู้มุ่งมั่นในสายงานวิทยาศาสตร์ข้อมูล • Machine Learning & Computer Vision
+          </p>
+
+          <div class="hero-contact-strip">
+            <a href="mailto:khoboon.k@ku.th" class="contact-chip" title="ส่งอีเมล">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <span>khoboon.k@ku.th</span>
+            </a>
+            <a href="tel:+66983738273" class="contact-chip" title="โทรศัพท์">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>+66 98 373 8273</span>
+            </a>
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn btn-primary">ติดต่อฉัน</a>
+            <a href="#project" class="btn btn-secondary">ดูผลงานโปรเจกต์</a>
+            <a href="#gallery" class="btn btn-secondary">ชมภาพกิจกรรม</a>
+            <button type="button" class="btn btn-secondary" onclick="window.print()">พิมพ์ / บันทึก PDF</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">เกี่ยวกับฉัน</div>
+          <h2 class="section-title">ประวัติส่วนตัวและความมุ่งมั่น</h2>
+        </div>
+
+        <div class="card about-card">
+          <div class="quote-box">
+            "สวัสดีครับ ผมชื่ออองรีเป็นบัณฑิตจบใหม่จากมหาวิทยาลัยเกษตรศาสตร์ ผมจัดทำแฟ้มสะสมผลงาน นี้ขึ้นเพื่อสมัครงานในสายงานด้านข้อมูล ผมเป็นคนเรียนรู้เร็ว มีความมุ่งมั่นตั้งใจ และเข้ากับผู้อื่นได้ง่าย หวังเป็นอย่างยิ่งว่าท่านจะพิจารณารับผมเข้าทำงานในตำแหน่งนี้ครับ"
+          </div>
+
+          <div class="traits-grid">
+            <div class="trait-item">
+              <div class="trait-icon">🚀</div>
+              <div>
+                <div class="trait-title">เรียนรู้เร็ว (Quick Learner)</div>
+                <div class="trait-sub">พร้อมปรับตัวเข้ากับเทคโนโลยีและโจทย์ใหม่ๆ ได้ไว</div>
+              </div>
+            </div>
+
+            <div class="trait-item">
+              <div class="trait-icon">🔥</div>
+              <div>
+                <div class="trait-title">มุ่งมั่นตั้งใจ (Passionate & Driven)</div>
+                <div class="trait-sub">ทุ่มเทในการวิเคราะห์ข้อมูลเพื่อสร้างผลลัพธ์ที่มีคุณค่า</div>
+              </div>
+            </div>
+
+            <div class="trait-item">
+              <div class="trait-icon">🤝</div>
+              <div>
+                <div class="trait-title">เข้ากับผู้อื่นได้ง่าย (Team Player)</div>
+                <div class="trait-sub">สื่อสารและทำงานร่วมกับทีมได้อย่างราบรื่น</div>
+              </div>
+            </div>
+
+            <div class="trait-item">
+              <div class="trait-icon">📊</div>
+              <div>
+                <div class="trait-title">ขับเคลื่อนด้วยข้อมูล (Data-Centric)</div>
+                <div class="trait-sub">เน้นการประยุกต์ใช้ AI, ML และการวิเคราะห์เชิงลึก</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">ประวัติด้านการศึกษา</div>
+          <h2 class="section-title">การศึกษา</h2>
+        </div>
+
+        <div class="card education-card">
+          <div class="edu-logo-wrapper">
+            <img src="ku-logo.png" alt="มหาวิทยาลัยเกษตรศาสตร์">
+          </div>
+          <div class="edu-content">
+            <div class="edu-degree">บัณฑิตจบใหม่</div>
+            <div class="edu-institution">มหาวิทยาลัยเกษตรศาสตร์ (Kasetsart University)</div>
+            <p class="edu-details">
+              สำเร็จการศึกษาจากมหาวิทยาลัยเกษตรศาสตร์ พร้อมพื้นฐานที่เข้มแข็งด้านการวิเคราะห์ข้อมูลเชิงปริมาณ, Computer Vision, การสร้างแบบจำลองข้อมูล และการแก้ปัญหาจริง ควบคู่กับประสบการณ์ผู้นำในองค์กรนิสิต
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">คลังทักษะและเครื่องมือ</div>
+          <h2 class="section-title">ทักษะและความสามารถหลัก (Key Skills & Tools)</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="card">
+            <div class="skill-category-title">
+              <span>🤖</span>
+              <span>Machine Learning & AI</span>
+              <span class="badge-counter">5 Tools</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-pill highlight">Python</span>
+              <span class="skill-pill highlight">Machine Learning</span>
+              <span class="skill-pill highlight">Computer Vision</span>
+              <span class="skill-pill highlight">Image Classification</span>
+              <span class="skill-pill highlight">NLP (Natural Language Processing)</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="skill-category-title">
+              <span>🗄️</span>
+              <span>การสืบค้นและจัดการข้อมูล</span>
+              <span class="badge-counter">2 Tools</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-pill cyan">SQL</span>
+              <span class="skill-pill cyan">Microsoft Excel</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="skill-category-title">
+              <span>📈</span>
+              <span>การแสดงผลข้อมูลและ Business Intelligence</span>
+              <span class="badge-counter">2 Tools</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-pill">Tableau</span>
+              <span class="skill-pill">PowerBI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="project">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">ผลงานเด่น</div>
+          <h2 class="section-title">โปรเจกต์ด้านวิทยาศาสตร์ข้อมูล (Data Science Project)</h2>
+        </div>
+
+        <div class="card project-featured-card">
+          <div class="project-header">
+            <div>
+              <span class="project-badge">Computer Vision & Deep Learning</span>
+              <h3 class="project-title">ระบบตรวจจับหลุม ท่อระบายน้ำ และรอยแตกบนพื้นผิวถนนด้วยกล้องหน้ารถยนต์</h3>
+            </div>
+          </div>
+
+          <p class="project-desc">
+            การประยุกต์ใช้โมเดล Computer Vision ในการตรวจจับและจำแนกความเสียหายบนพื้นผิวถนน ได้แก่ หลุม (Pothole), ฝาท่อระบายน้ำ (Manhole) และรอยแตก (Crack) แบบเรียลไทม์จากภาพและวิดีโอกล้องหน้ารถยนต์ เพื่อสนับสนุนการซ่อมบำรุงทางหลวงและความปลอดภัยในการขับขี่
+          </p>
+
+          <div class="pipeline-container">
+            <div class="pipeline-title">สถาปัตยกรรมและขั้นตอนการทำงานของระบบ (Pipeline)</div>
+            <div class="pipeline-steps">
+              <div class="pipeline-step">
+                <div class="step-number">STEP 01</div>
+                <div class="step-name">รับสัญญาณภาพ (Input)</div>
+                <div class="step-desc">ดึงเฟรมวิดีโอจากกล้องหน้ารถยนต์ในสภาวะแสงและสภาพแวดล้อมที่หลากหลาย</div>
+              </div>
+              <div class="pipeline-step">
+                <div class="step-number">STEP 02</div>
+                <div class="step-name">การเตรียมข้อมูลภาพ (Preprocessing)</div>
+                <div class="step-desc">ลดสัญญาณรบกวน ปรับสมดุลคอนทราสต์ และกำหนดขอบเขตพื้นที่ถนน (ROI)</div>
+              </div>
+              <div class="pipeline-step">
+                <div class="step-number">STEP 03</div>
+                <div class="step-name">ตรวจจับและจำแนก (Detection & Classification)</div>
+                <div class="step-desc">ระบุพิกัดและจำแนกประเภทหลุม ฝาท่อระบายน้ำ และรอยแตกร้าว</div>
+              </div>
+              <div class="pipeline-step">
+                <div class="step-number">STEP 04</div>
+                <div class="step-name">ประเมินระดับและแจ้งเตือน (Alerting)</div>
+                <div class="step-desc">คำนวณระดับความเสี่ยงและส่งต่อพิกัดเตือนผู้ขับขี่หรือแจ้งศูนย์ซ่อมบำรุง</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Computer Vision</span>
+            <span class="tech-tag">Image Classification</span>
+            <span class="tech-tag">Machine Learning</span>
+            <span class="tech-tag">Object Detection</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activities & Achievements Section -->
+    <section class="activities-section" id="activities">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">ความเป็นผู้นำและประสบการณ์</div>
+          <h2 class="section-title">กิจกรรมและผลงาน (Activities & Achievements)</h2>
+        </div>
+
+        <!-- Spotlight Winner Banner -->
+        <div class="spotlight-winner-card">
+          <div>
+            <div class="spotlight-badge">🏆 1st Place Champion • รางวัลชนะเลิศ</div>
+            <h3 class="spotlight-title">การประกวดขบวนแห่ปราสาทผึ้งสร้างสรรค์ ประจำปี 2568 (เงินรางวัล 30,000 บาท)</h3>
+            <p class="spotlight-desc">
+              ได้รับรางวัลชนะเลิศ พร้อมถ้วยรางวัลเกียรติยศและเงินรางวัล 30,000 บาท จากเทศบาลนครสกลนคร ในการนำทีมและร่วมสร้างสรรค์ขบวนแห่ปราสาทผึ้งสร้างสรรค์
+            </p>
+            <div class="hero-cta-group">
+              <button type="button" class="btn btn-primary" onclick="openLightbox('pic/1790011233032.jpg', 'รางวัลชนะเลิศ การประกวดขบวนแห่ปราสาทผึ้งสร้างสรรค์ 2568')">
+                ชมภาพถ้วยรางวัล 🏆
+              </button>
+              <button type="button" class="btn btn-secondary" onclick="openLightbox('pic/1790011233667.jpg', 'ทีมงานนิสิตผู้สร้างสรรค์ขบวนแห่ปราสาทผึ้ง')">
+                ชมภาพทีมงานและผลงาน 👥
+              </button>
+            </div>
+          </div>
+          <div class="spotlight-photo-frame" onclick="openLightbox('pic/1790011233032.jpg', 'รางวัลชนะเลิศ การประกวดขบวนแห่ปราสาทผึ้งสร้างสรรค์ 2568')">
+            <img src="pic/1790011233032.jpg" alt="รางวัลชนะเลิศ" loading="lazy">
+            <div class="spotlight-photo-overlay">
+              <span>🏆 รางวัลชนะเลิศ ประจำปี 2568</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Three Core Cards -->
+        <div class="activities-grid">
+          <div class="card activity-card">
+            <div class="activity-preview-thumb" onclick="openLightbox('pic/1790011232238.jpg', 'การประชุมยุทธศาสตร์ร่วมกับคณะกรรมการบริหารองค์การนิสิต')">
+              <span class="activity-thumb-tag">องค์การบริหารนิสิต</span>
+              <img src="pic/1790011232238.jpg" alt="การประชุมองค์การบริหารนิสิต" loading="lazy">
+            </div>
+            <div class="activity-icon">🏛️</div>
+            <div class="activity-role">คณะกรรมการบริหารองค์การบริหารนิสิต (Student Administrative Board)</div>
+            <div class="activity-period">ปี พ.ศ. 2568 – 2569</div>
+            <p class="activity-desc">
+              ปฏิบัติหน้าที่ในตำแหน่ง ผู้อำนวยการทั่วไป (General Director) ประจำปี 2568 ดูแลการบริหารงาน วางแผนงานส่วนกลาง และการประสานงาน และได้รับแต่งตั้งเป็น Co-Leader ประจำปี 2569 ขับเคลื่อนยุทธศาสตร์และบริหารทีมงานนิสิต
+            </p>
+            <div class="activity-skills-badge">
+              <span class="micro-badge">General Director (2568)</span>
+              <span class="micro-badge">Co-Leader (2569)</span>
+              <span class="micro-badge">การวางแผนยุทธศาสตร์</span>
+              <span class="micro-badge">ความเป็นผู้นำ</span>
+            </div>
+          </div>
+
+          <div class="card activity-card">
+            <div class="activity-preview-thumb" onclick="openLightbox('pic/received_1436870441167572.jpeg', 'ทีมงานโปรดักชันเวทีคอนเสิร์ต กีฬานนทรีอีสานสัมพันธ์ ครั้งที่ 21')">
+              <span class="activity-thumb-tag">กีฬานนทรีอีสานสัมพันธ์</span>
+              <img src="pic/received_1436870441167572.jpeg" alt="คอนเสิร์ตกีฬานนทรีอีสานสัมพันธ์" loading="lazy">
+            </div>
+            <div class="activity-icon">🎤</div>
+            <div class="activity-role">ทีมงานจัดกิจกรรมและอีเวนต์ (Event Staff)</div>
+            <div class="activity-period">งานแข่งขันกีฬา คอนเสิร์ต และงานแถลงข่าว</div>
+            <p class="activity-desc">
+              ปฏิบัติหน้าที่ทีมงานดำเนินงานในอีเวนต์ระดับใหญ่ เช่น การแข่งขันกีฬา, งานคอนเสิร์ต และงานแถลงข่าว ดูแลความเรียบร้อย การแก้ปัญหาเฉพาะหน้า และการทำงานร่วมกันภายใต้ความกดดัน
+            </p>
+            <div class="activity-skills-badge">
+              <span class="micro-badge">งานแข่งขันกีฬา</span>
+              <span class="micro-badge">KUSE RUN 2025</span>
+              <span class="micro-badge">งานคอนเสิร์ต</span>
+              <span class="micro-badge">การแก้ปัญหาเฉพาะหน้า</span>
+            </div>
+          </div>
+
+          <div class="card activity-card">
+            <div class="activity-preview-thumb" onclick="openLightbox('pic/1790011228905.jpg', 'การจัดซุ้มกิจกรรมและสาธิตเวิร์กช็อปเชิงวัฒนธรรม')">
+              <span class="activity-thumb-tag">ฝ่ายปฏิบัติการ</span>
+              <img src="pic/1790011228905.jpg" alt="การสาธิตเวิร์กช็อป" loading="lazy">
+            </div>
+            <div class="activity-icon">💊</div>
+            <div class="activity-role">ประสบการณ์ในโรงงานผลิตยา (Pharmaceutical Manufacturing)</div>
+            <div class="activity-period">ฝ่ายคลังสินค้า (Warehouse) และฝ่ายผลิต (Production)</div>
+            <p class="activity-desc">
+              สั่งสมประสบการณ์การทำงานจริงในฝ่ายคลังสินค้าและฝ่ายผลิตของโรงงานผลิตยา ปฏิบัติตามมาตรฐานการควบคุมคุณภาพที่เข้มงวด การบันทึกข้อมูลอย่างเป็นระบบ และการบริหารสินค้าคงคลัง
+            </p>
+            <div class="activity-skills-badge">
+              <span class="micro-badge">ฝ่ายคลังสินค้า</span>
+              <span class="micro-badge">สายการผลิต</span>
+              <span class="micro-badge">มาตรฐานการควบคุมคุณภาพ</span>
+              <span class="micro-badge">การบันทึกข้อมูล</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Gallery -->
+        <div class="gallery-container" id="gallery">
+          <div class="gallery-header-bar">
+            <div class="gallery-title-box">
+              <h3>ประมวลภาพกิจกรรมและผลงาน (Activity Gallery)</h3>
+              <p>คลิกที่ภาพเพื่อดูรายละเอียดภาพขนาดใหญ่</p>
+            </div>
+
+            <div class="gallery-filters">
+              <button type="button" class="filter-btn active" onclick="filterGallery('all', this)">ทั้งหมด</button>
+              <button type="button" class="filter-btn" onclick="filterGallery('award', this)">รางวัลชนะเลิศ</button>
+              <button type="button" class="filter-btn" onclick="filterGallery('board', this)">องค์การบริหารนิสิต</button>
+              <button type="button" class="filter-btn" onclick="filterGallery('events', this)">อีเวนต์และคอนเสิร์ต</button>
+            </div>
+          </div>
+
+          <div class="gallery-grid">
+            <div class="gallery-item" data-category="award" onclick="openLightbox('pic/1790011233032.jpg', 'รางวัลชนะเลิศ การประกวดขบวนแห่ปราสาทผึ้งสร้างสรรค์ ประจำปี 2568 พร้อมเงินรางวัล 30,000 บาท')">
+              <img src="pic/1790011233032.jpg" alt="รางวัลชนะเลิศ" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge">รางวัลชนะเลิศ</span>
+                <span class="gallery-item-caption">รางวัลชนะเลิศ ขบวนแห่ปราสาทผึ้งสร้างสรรค์ 2568</span>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="award" onclick="openLightbox('pic/1790011233667.jpg', 'ทีมงานนิสิตผู้ร่วมสร้างสรรค์ขบวนแห่ปราสาทผึ้งกับผลงานที่สำเร็จสมบูรณ์')">
+              <img src="pic/1790011233667.jpg" alt="ทีมงานผู้สร้างสรรค์" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge">ทีมงานผลงาน</span>
+                <span class="gallery-item-caption">ทีมงานผู้สร้างสรรค์ขบวนแห่ปราสาทผึ้ง</span>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="award" onclick="openLightbox('pic/1790011230771.jpg', 'การลงมือสร้างโครงสร้างและตกแต่งสถาปัตยกรรมขบวนแห่ปราสาทผึ้ง')">
+              <img src="pic/1790011230771.jpg" alt="ขั้นตอนการสร้างโครงสร้าง" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge">งานก่อสร้างโครงสร้าง</span>
+                <span class="gallery-item-caption">การสร้างโครงสร้างและงานช่างตกแต่ง</span>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="board" onclick="openLightbox('pic/1790011232238.jpg', 'การประชุมยุทธศาสตร์ร่วมกับคณะกรรมการบริหารองค์การนิสิต มหาวิทยาลัยเกษตรศาสตร์')">
+              <img src="pic/1790011232238.jpg" alt="การประชุมยุทธศาสตร์" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge">องค์การบริหารนิสิต</span>
+                <span class="gallery-item-caption">การประชุมยุทธศาสตร์ร่วมกับผู้นำนิสิต</span>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="board" onclick="openLightbox('pic/1790011228649.jpg', 'กล่าวเปิดการประชุมและชี้แจงวาระในฐานะผู้นำองค์การบริหารนิสิต')">
+              <img src="pic/1790011228649.jpg" alt="กล่าวเปิดประชุม" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge">ความเป็นผู้นำ</span>
+                <span class="gallery-item-caption">กล่าวเปิดการประชุมในฐานะผู้นำนิสิต</span>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="board" onclick="openLightbox('pic/1772986252081.jpg', 'การประชุมสามัญและภาพรวมคณะกรรมการบริหารองค์การบริหารนิสิต')">
+              <img src="pic/1772986252081.jpg" alt="คณะกรรมการบริหารองค์การบริหารนิสิต" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge">องค์การบริหารนิสิต</span>
+                <span class="gallery-item-caption">คณะกรรมการบริหารองค์การบริหารนิสิต</span>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="events" onclick="openLightbox('pic/received_1436870441167572.jpeg', 'ทีมงานบริหารจัดการเวทีและโปรดักชัน งานกีฬานนทรีอีสานสัมพันธ์ ครั้งที่ 21')">
+              <img src="pic/received_1436870441167572.jpeg" alt="เวทีกีฬานนทรีอีสานสัมพันธ์" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge">เวทีและคอนเสิร์ต</span>
+                <span class="gallery-item-caption">เวทีคอนเสิร์ต กีฬานนทรีอีสานสัมพันธ์ ครั้งที่ 21</span>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="events" onclick="openLightbox('pic/1790011231485.jpg', 'เจ้าหน้าที่ฝ่ายเทคนิคและควบคุมเส้นชัย งานวิ่ง KUSE RUN 2025')">
+              <img src="pic/1790011231485.jpg" alt="งานวิ่ง KUSE RUN 2025" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge">การแข่งขันกีฬา</span>
+                <span class="gallery-item-caption">เจ้าหน้าที่ควบคุมเส้นชัย งานวิ่ง KUSE RUN 2025</span>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="events" onclick="openLightbox('pic/1758799411128.jpg', 'พิธีกรและผู้ประสานงานเวทีกลาง ฝ่าย CSC STAFF 2025')">
+              <img src="pic/1758799411128.jpg" alt="พิธีกร CSC STAFF 2025" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge">พิธีกรดำเนินรายการ</span>
+                <span class="gallery-item-caption">พิธีกรและผู้ประสานงาน CSC STAFF 2025</span>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="events" onclick="openLightbox('pic/1790011229351.jpg', 'กรรมการตัดสินและควบคุมการแข่งขันกีฬาในสนาม')">
+              <img src="pic/1790011229351.jpg" alt="กรรมการตัดสินกีฬา" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge">กรรมการกีฬา</span>
+                <span class="gallery-item-caption">กรรมการตัดสินและควบคุมการแข่งขันกีฬา</span>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="events" onclick="openLightbox('pic/1790011229894.jpg', 'การจัดการอุปกรณ์และลำดับพิธีการในงานแข่งขันกีฬา')">
+              <img src="pic/1790011229894.jpg" alt="การจัดการอุปกรณ์กีฬา" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge">ฝ่ายจัดเตรียมงาน</span>
+                <span class="gallery-item-caption">การจัดการอุปกรณ์และลำดับพิธีการกีฬา</span>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="events" onclick="openLightbox('pic/1790011228364.jpg', 'การประสานงานศิลปินและฝ่ายดูแลหลังเวทีงานคอนเสิร์ต')">
+              <img src="pic/1790011228364.jpg" alt="ดูแลศิลปินหลังเวที" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge">ดูแลหลังเวทีคอนเสิร์ต</span>
+                <span class="gallery-item-caption">การประสานงานศิลปินและฝ่ายดูแลหลังเวที</span>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="events" onclick="openLightbox('pic/DSC08299.JPG', 'การวัดพื้นที่และเตรียมสถานที่สำหรับการจัดกิจกรรมกลางแจ้ง')">
+              <img src="pic/DSC08299.JPG" alt="การวัดพื้นที่จัดงาน" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge">ฝ่ายสถานที่</span>
+                <span class="gallery-item-caption">การวัดพื้นที่และเตรียมสถานที่กิจกรรมกลางแจ้ง</span>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="board" onclick="openLightbox('pic/IMG_20260920_135450_401.jpg', 'การจัดกิจกรรมปฐมนิเทศและค่ายนิสิตในหอประชุมใหญ่')">
+              <img src="pic/IMG_20260920_135450_401.jpg" alt="กิจกรรมปฐมนิเทศ" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge">กิจกรรมนิสิต</span>
+                <span class="gallery-item-caption">การจัดกิจกรรมปฐมนิเทศและค่ายในหอประชุมใหญ่</span>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-category="events" onclick="openLightbox('pic/1790011228905.jpg', 'การจัดซุ้มกิจกรรมและสาธิตเวิร์กช็อปเชิงวัฒนธรรม')">
+              <img src="pic/1790011228905.jpg" alt="สาธิตเวิร์กช็อป" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge">เวิร์กช็อป</span>
+                <span class="gallery-item-caption">การจัดซุ้มกิจกรรมและสาธิตเวิร์กช็อป</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="card cta-card">
+          <h2 class="cta-title">พร้อมสำหรับการร่วมงานและพูดคุย</h2>
+          <p class="cta-desc">
+            ผมมีความพร้อมและกระตือรือร้นในการเข้ารับการฝึกงานในตำแหน่ง Data Scientist เพื่อนำความรู้ ความมุ่งมั่น และความสามารถในการเรียนรู้เร็วไปร่วมสร้างประโยชน์ให้กับองค์กรของคุณ
+          </p>
+
+          <div class="cta-buttons">
+            <a href="mailto:khoboon.k@ku.th" class="btn btn-primary">
+              <svg style="width: 18px; height: 18px; fill: currentColor;" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <span>อีเมล: khoboon.k@ku.th</span>
+            </a>
+            <a href="tel:+66983738273" class="btn btn-secondary">
+              <svg style="width: 18px; height: 18px; fill: currentColor;" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>โทร: +66 98 373 8273</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-content-wrapper" onclick="event.stopPropagation()">
+      <button type="button" class="lightbox-close-btn" onclick="closeLightbox()" aria-label="ปิดหน้าต่างพรีวิว">✕</button>
+      <div class="lightbox-img-box">
+        <img id="lightbox-img" src="" alt="ภาพขนาดใหญ่">
+      </div>
+      <div class="lightbox-footer">
+        <span class="lightbox-caption-text" id="lightbox-caption"></span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-copy">
+        <img src="ku-logo.png" alt="KU" style="width: 22px; height: 22px; vertical-align: middle;">
+        <span>© 2026 ก่อบุญ คงศรี (อองรี). บัณฑิตมหาวิทยาลัยเกษตรศาสตร์.</span>
+      </div>
+      <div class="footer-links">
+        <a href="#about">เกี่ยวกับฉัน</a>
+        <a href="#skills">ทักษะ</a>
+        <a href="#project">โปรเจกต์</a>
+        <a href="#activities">กิจกรรม</a>
+        <a href="#gallery">ประมวลภาพกิจกรรม</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const nextTheme = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', nextTheme);
+      document.getElementById('theme-icon').textContent = nextTheme === 'dark' ? '🌙' : '☀️';
+      try { localStorage.setItem('portfolio_theme', nextTheme); } catch (e) {}
+    }
+
+    function openLightbox(src, caption) {
+      const modal = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-caption');
+      img.src = src;
+      cap.textContent = caption;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      if (e && e.target && e.target.id === 'lightbox-img') return;
+      const modal = document.getElementById('lightbox');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    function filterGallery(category, btn) {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const items = document.querySelectorAll('.gallery-item');
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('portfolio_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.getElementById('theme-icon').textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+    });
+  </script>
+</body>
+</html>

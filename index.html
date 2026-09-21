@@ -1,0 +1,2217 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khoboon Kongsri (Henry) | Data Scientist Intern Portfolio</title>
+  <meta name="description" content="Portfolio of Khoboon Kongsri (Henry) - Kasetsart University graduate applying for Data Scientist Intern. Skilled in Python, SQL, Machine Learning, Computer Vision, PowerBI, and Tableau.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-sans: 'Inter', 'Prompt', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      
+      /* Dark Theme (Default) */
+      --bg-primary: #0b0f19;
+      --bg-secondary: #111827;
+      --bg-card: rgba(17, 24, 39, 0.75);
+      --bg-card-hover: rgba(30, 41, 59, 0.85);
+      --bg-glass: rgba(15, 23, 42, 0.85);
+      --border-color: #1e293b;
+      --border-accent: rgba(16, 185, 129, 0.3);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent-ku: #059669;
+      --accent-ku-light: #10b981;
+      --accent-ku-subtle: rgba(16, 185, 129, 0.12);
+      --accent-cyan: #0284c7;
+      --accent-cyan-light: #38bdf8;
+      --accent-cyan-subtle: rgba(56, 189, 248, 0.12);
+      --accent-amber: #d97706;
+      --accent-gold: #f59e0b;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+      --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+      --shadow-glow: 0 0 25px rgba(16, 185, 129, 0.2);
+      --badge-bg: #1e293b;
+      --badge-border: #334155;
+    }
+
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-card: rgba(255, 255, 255, 0.9);
+      --bg-card-hover: rgba(241, 245, 249, 0.95);
+      --bg-glass: rgba(255, 255, 255, 0.88);
+      --border-color: #e2e8f0;
+      --border-accent: rgba(5, 150, 105, 0.3);
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      --accent-ku: #006642;
+      --accent-ku-light: #059669;
+      --accent-ku-subtle: rgba(0, 102, 66, 0.08);
+      --accent-cyan: #0369a1;
+      --accent-cyan-light: #0284c7;
+      --accent-cyan-subtle: rgba(2, 132, 199, 0.08);
+      --accent-gold: #d97706;
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+      --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+      --shadow-glow: 0 0 25px rgba(0, 102, 66, 0.15);
+      --badge-bg: #f1f5f9;
+      --badge-border: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.65;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ambient-glow {
+      position: fixed;
+      top: -150px;
+      right: -100px;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(2, 132, 199, 0.08) 50%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(60px);
+    }
+
+    .ambient-glow-2 {
+      position: fixed;
+      bottom: -100px;
+      left: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(2, 132, 199, 0.12) 0%, rgba(16, 185, 129, 0.06) 50%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(60px);
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: var(--bg-glass);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      object-fit: contain;
+      background: #ffffff;
+      padding: 3px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .brand-tag {
+      font-size: 0.75rem;
+      color: var(--accent-ku-light);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    nav.nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      border-radius: 20px;
+      padding: 3px;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lang-btn.active {
+      background: var(--accent-ku);
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(5, 150, 105, 0.35);
+    }
+
+    .theme-toggle-btn {
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--text-primary);
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.05rem;
+    }
+
+    .theme-toggle-btn:hover {
+      border-color: var(--accent-ku-light);
+    }
+
+    .print-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+
+    .print-btn:hover {
+      color: var(--text-primary);
+      border-color: var(--accent-cyan-light);
+    }
+
+    section.hero {
+      padding: 64px 0 48px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-avatar-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-avatar-frame {
+      position: relative;
+      width: 270px;
+      height: 340px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 2px solid var(--border-accent);
+      box-shadow: var(--shadow-glow), var(--shadow-lg);
+      background: var(--bg-secondary);
+    }
+
+    .hero-avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero-avatar-badge {
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-card);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-accent);
+      padding: 6px 16px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      box-shadow: var(--shadow-md);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent-ku-light);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent-ku-light);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.6; }
+    }
+
+    .hero-status-text {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hero-pre-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-ku-subtle);
+      color: var(--accent-ku-light);
+      border: 1px solid var(--border-accent);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      width: fit-content;
+    }
+
+    .hero-pre-badge img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+
+    .hero-title {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-ku-light) 60%, var(--accent-cyan-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .hero-contact-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 8px 0;
+    }
+
+    .contact-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      padding: 8px 16px;
+      border-radius: 12px;
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .contact-chip:hover {
+      border-color: var(--accent-ku-light);
+      background: var(--accent-ku-subtle);
+      transform: translateY(-2px);
+    }
+
+    .contact-chip svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      color: var(--accent-ku-light);
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-ku) 0%, var(--accent-ku-light) 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-cyan-light);
+      background: var(--accent-cyan-subtle);
+      transform: translateY(-2px);
+    }
+
+    .section-header {
+      margin-bottom: 32px;
+    }
+
+    .section-tag {
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--accent-ku-light);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 1.85rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: var(--shadow-md);
+      transition: all 0.25s ease;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .card:hover {
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* About Section */
+    section.about-section {
+      padding: 48px 0;
+    }
+
+    .about-card {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .quote-box {
+      border-left: 4px solid var(--accent-ku-light);
+      padding-left: 20px;
+      font-size: 1.08rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    .traits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .trait-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: var(--badge-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+    }
+
+    .trait-icon {
+      font-size: 1.35rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--accent-ku-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .trait-title {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--text-primary);
+    }
+
+    .trait-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Education Section */
+    section.education-section {
+      padding: 36px 0;
+    }
+
+    .education-card {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .edu-logo-wrapper {
+      width: 100px;
+      height: 100px;
+      border-radius: 20px;
+      background: #ffffff;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      flex-shrink: 0;
+    }
+
+    .edu-logo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .edu-content {
+      flex: 1;
+    }
+
+    .edu-degree {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .edu-institution {
+      font-size: 1.05rem;
+      color: var(--accent-ku-light);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .edu-details {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    /* Skills Section */
+    section.skills-section {
+      padding: 48px 0;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .skill-category-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: var(--text-primary);
+    }
+
+    .skill-category-title span.badge-counter {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: var(--accent-ku-subtle);
+      color: var(--accent-ku-light);
+      font-weight: 600;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: 12px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .skill-pill.highlight {
+      border-color: var(--accent-ku-light);
+      background: var(--accent-ku-subtle);
+      color: var(--accent-ku-light);
+    }
+
+    .skill-pill.cyan {
+      border-color: var(--accent-cyan-light);
+      background: var(--accent-cyan-subtle);
+      color: var(--accent-cyan-light);
+    }
+
+    /* Projects Section */
+    section.projects-section {
+      padding: 48px 0;
+    }
+
+    .project-featured-card {
+      border: 1px solid var(--border-accent);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-featured-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-ku-light), var(--accent-cyan-light));
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .project-badge {
+      background: var(--accent-cyan-subtle);
+      color: var(--accent-cyan-light);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .project-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 6px;
+    }
+
+    .project-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .pipeline-container {
+      background: var(--badge-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .pipeline-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+
+    .pipeline-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      position: relative;
+    }
+
+    .pipeline-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .step-number {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-ku-light);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .step-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .step-desc {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .project-tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tech-tag {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      padding: 4px 10px;
+      border-radius: 8px;
+      color: var(--text-secondary);
+    }
+
+    /* Activities Section */
+    section.activities-section {
+      padding: 48px 0;
+    }
+
+    /* Spotlight Winner Banner */
+    .spotlight-winner-card {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(16, 185, 129, 0.12) 100%);
+      border: 2px solid var(--accent-gold);
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 32px;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 28px;
+      align-items: center;
+      box-shadow: 0 8px 30px rgba(245, 158, 11, 0.18);
+    }
+
+    .spotlight-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.2);
+      color: var(--accent-gold);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    .spotlight-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .spotlight-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .spotlight-photo-frame {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid rgba(245, 158, 11, 0.35);
+      cursor: pointer;
+      aspect-ratio: 4 / 3;
+    }
+
+    .spotlight-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .spotlight-photo-frame:hover img {
+      transform: scale(1.05);
+    }
+
+    .spotlight-photo-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+      padding: 12px 14px;
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .activity-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .activity-preview-thumb {
+      width: 100%;
+      height: 180px;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .activity-preview-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .activity-preview-thumb:hover img {
+      transform: scale(1.06);
+    }
+
+    .activity-thumb-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(4px);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .activity-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      background: var(--accent-ku-subtle);
+      border: 1px solid var(--border-accent);
+    }
+
+    .activity-role {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .activity-period {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent-ku-light);
+      margin-bottom: 12px;
+    }
+
+    .activity-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .activity-skills-badge {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+
+    .micro-badge {
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: var(--badge-bg);
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+    }
+
+    /* Photo Gallery Section */
+    .gallery-container {
+      margin-top: 36px;
+    }
+
+    .gallery-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .gallery-title-box h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .gallery-title-box p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .gallery-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-btn {
+      background: var(--badge-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--accent-ku);
+      color: #ffffff;
+      border-color: var(--accent-ku);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      aspect-ratio: 4 / 3;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent-ku-light);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.85) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 14px;
+      color: #ffffff;
+      opacity: 0.92;
+      transition: opacity 0.2s;
+    }
+
+    .gallery-item-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-ku-light);
+      margin-bottom: 2px;
+    }
+
+    .gallery-item-caption {
+      font-size: 0.82rem;
+      font-weight: 600;
+      line-height: 1.35;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(5, 8, 15, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .lightbox-content-wrapper {
+      max-width: 900px;
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+      position: relative;
+    }
+
+    .lightbox-img-box {
+      width: 100%;
+      max-height: 70vh;
+      background: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .lightbox-img-box img {
+      max-width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    .lightbox-footer {
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-card);
+    }
+
+    .lightbox-caption-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .lightbox-close-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.7);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .lightbox-close-btn:hover {
+      background: rgba(220, 38, 38, 0.85);
+    }
+
+    /* Contact / CTA Section */
+    section.contact-section {
+      padding: 56px 0;
+    }
+
+    .cta-card {
+      text-align: center;
+      padding: 48px 32px;
+      background: linear-gradient(180deg, var(--bg-card) 0%, rgba(5, 150, 105, 0.06) 100%);
+      border: 1px solid var(--border-accent);
+    }
+
+    .cta-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .cta-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 28px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    /* Footer */
+    footer.site-footer {
+      border-top: 1px solid var(--border-color);
+      padding: 32px 0;
+      margin-top: auto;
+      background: var(--bg-secondary);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-copy {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-primary);
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 11pt;
+      }
+
+      .site-header, .ambient-glow, .ambient-glow-2, .hero-cta-group, .cta-buttons, .lang-switcher, .theme-toggle-btn, .print-btn, .lightbox-modal, .gallery-filters {
+        display: none !important;
+      }
+
+      .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+
+      .card, .spotlight-winner-card {
+        background: #ffffff !important;
+        border: 1px solid #cccccc !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+        margin-bottom: 12pt;
+        padding: 14pt !important;
+      }
+
+      .hero-grid {
+        grid-template-columns: 180px 1fr !important;
+        gap: 20px !important;
+      }
+
+      .hero-avatar-frame {
+        width: 160px !important;
+        height: 200px !important;
+      }
+
+      .hero-title {
+        font-size: 18pt !important;
+      }
+
+      a {
+        color: #000000 !important;
+        text-decoration: none !important;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 840px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-avatar-wrapper {
+        margin-bottom: 12px;
+      }
+
+      .hero-pre-badge, .hero-contact-strip, .hero-cta-group {
+        justify-content: center;
+      }
+
+      nav.nav-links {
+        display: none;
+      }
+
+      .education-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .spotlight-winner-card {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient-glow" aria-hidden="true"></div>
+  <div class="ambient-glow-2" aria-hidden="true"></div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#top" class="brand">
+        <img src="ku-logo.png" alt="Kasetsart University Logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-name" data-i18n="brand_name">Khoboon Kongsri</span>
+          <span class="brand-tag" data-i18n="brand_role">Data Science Intern</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#about" class="nav-link" data-i18n="nav_about">About</a>
+        <a href="#education" class="nav-link" data-i18n="nav_education">Education</a>
+        <a href="#skills" class="nav-link" data-i18n="nav_skills">Skills</a>
+        <a href="#project" class="nav-link" data-i18n="nav_project">Project</a>
+        <a href="#activities" class="nav-link" data-i18n="nav_activities">Activities & Achievements</a>
+        <a href="#gallery" class="nav-link" data-i18n="nav_gallery">Photos</a>
+        <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Language Switcher -->
+        <div class="lang-switcher" role="group" aria-label="Language Switcher">
+          <button type="button" class="lang-btn active" id="btn-en" onclick="setLanguage('en')">EN</button>
+          <button type="button" class="lang-btn" id="btn-th" onclick="setLanguage('th')">TH</button>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button type="button" class="theme-toggle-btn" id="theme-btn" onclick="toggleTheme()" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+          <span id="theme-icon">🌙</span>
+        </button>
+
+        <!-- Print Resume -->
+        <button type="button" class="print-btn" onclick="window.print()" title="Print / Save PDF" aria-label="Print Resume">
+          🖨️
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-avatar-wrapper">
+          <div class="hero-avatar-frame">
+            <img src="profile-picture.png" alt="Khoboon Kongsri (Henry)" class="hero-avatar-img">
+          </div>
+          <div class="hero-avatar-badge">
+            <span class="status-dot"></span>
+            <span class="hero-status-text" data-i18n="hero_status">Available for Internship</span>
+          </div>
+        </div>
+
+        <div class="hero-content">
+          <div class="hero-pre-badge">
+            <img src="ku-logo.png" alt="KU Emblem">
+            <span data-i18n="hero_badge">Kasetsart University Graduate</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span data-i18n="hero_greeting">Hi, I'm</span> <span class="gradient-text" data-i18n="hero_name">Khoboon Kongsri</span>
+            <span style="font-weight: 500; font-size: 1.9rem; display: block;" data-i18n="hero_nickname">(Henry / อองรี)</span>
+          </h1>
+
+          <p class="hero-subtitle" data-i18n="hero_role_title">
+            Aspiring Data Scientist • Machine Learning & Computer Vision
+          </p>
+
+          <div class="hero-contact-strip">
+            <a href="mailto:khoboon.k@ku.th" class="contact-chip" title="Send Email">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <span>khoboon.k@ku.th</span>
+            </a>
+            <a href="tel:+66983738273" class="contact-chip" title="Call Phone">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>+66 98 373 8273</span>
+            </a>
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn btn-primary" data-i18n="hero_cta_contact">Contact Me</a>
+            <a href="#project" class="btn btn-secondary" data-i18n="hero_cta_project">View Project</a>
+            <a href="#gallery" class="btn btn-secondary" data-i18n="hero_cta_gallery">View Activities</a>
+            <button type="button" class="btn btn-secondary" onclick="window.print()" data-i18n="hero_cta_print">Print / PDF</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" data-i18n="about_tag">About Me</div>
+          <h2 class="section-title" data-i18n="about_heading">Personal Statement & Profile</h2>
+        </div>
+
+        <div class="card about-card">
+          <div class="quote-box" data-i18n="about_quote">
+            "Hello, my name is Henry, and I am a Kasetsart University graduate. I have prepared this portfolio to seek the internship for a role in the data field. I am a quick learner who is passionate and easy to get along with. I hope you will consider me for the position."
+          </div>
+
+          <div class="traits-grid">
+            <div class="trait-item">
+              <div class="trait-icon">🚀</div>
+              <div>
+                <div class="trait-title" data-i18n="trait_1_title">Quick Learner</div>
+                <div class="trait-sub" data-i18n="trait_1_sub">Adapts rapidly to modern stacks</div>
+              </div>
+            </div>
+
+            <div class="trait-item">
+              <div class="trait-icon">🔥</div>
+              <div>
+                <div class="trait-title" data-i18n="trait_2_title">Passionate & Driven</div>
+                <div class="trait-sub" data-i18n="trait_2_sub">Dedicated to actionable insights</div>
+              </div>
+            </div>
+
+            <div class="trait-item">
+              <div class="trait-icon">🤝</div>
+              <div>
+                <div class="trait-title" data-i18n="trait_3_title">Team Player</div>
+                <div class="trait-sub" data-i18n="trait_3_sub">Easy to collaborate and communicate</div>
+              </div>
+            </div>
+
+            <div class="trait-item">
+              <div class="trait-icon">📊</div>
+              <div>
+                <div class="trait-title" data-i18n="trait_4_title">Data-Centric Mindset</div>
+                <div class="trait-sub" data-i18n="trait_4_sub">AI, ML, and Analytics focus</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" data-i18n="edu_tag">Education</div>
+          <h2 class="section-title" data-i18n="edu_heading">Academic Background</h2>
+        </div>
+
+        <div class="card education-card">
+          <div class="edu-logo-wrapper">
+            <img src="ku-logo.png" alt="Kasetsart University">
+          </div>
+          <div class="edu-content">
+            <div class="edu-degree" data-i18n="edu_degree">University Graduate</div>
+            <div class="edu-institution" data-i18n="edu_school">Kasetsart University (มหาวิทยาลัยเกษตรศาสตร์)</div>
+            <p class="edu-details" data-i18n="edu_desc">
+              Graduated with strong foundations in quantitative analytical techniques, computer vision, data modeling, and practical problem-solving. Actively engaged in student leadership and real-world applied technical projects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Tools Section -->
+    <section class="skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" data-i18n="skills_tag">Technical Arsenal</div>
+          <h2 class="section-title" data-i18n="skills_heading">Key Skills & Tools</h2>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Machine Learning & AI -->
+          <div class="card">
+            <div class="skill-category-title">
+              <span>🤖</span>
+              <span data-i18n="skill_cat_ml">Machine Learning & AI</span>
+              <span class="badge-counter">5 Tools</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-pill highlight">Python</span>
+              <span class="skill-pill highlight">Machine Learning</span>
+              <span class="skill-pill highlight">Computer Vision</span>
+              <span class="skill-pill highlight">Image Classification</span>
+              <span class="skill-pill highlight">NLP (Natural Language Processing)</span>
+            </div>
+          </div>
+
+          <!-- Data Querying & Analysis -->
+          <div class="card">
+            <div class="skill-category-title">
+              <span>🗄️</span>
+              <span data-i18n="skill_cat_query">Data Querying & Analysis</span>
+              <span class="badge-counter">2 Tools</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-pill cyan">SQL</span>
+              <span class="skill-pill cyan">Microsoft Excel</span>
+            </div>
+          </div>
+
+          <!-- BI & Visualization -->
+          <div class="card">
+            <div class="skill-category-title">
+              <span>📈</span>
+              <span data-i18n="skill_cat_bi">Business Intelligence & Viz</span>
+              <span class="badge-counter">2 Tools</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-pill">Tableau</span>
+              <span class="skill-pill">PowerBI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="project">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" data-i18n="project_tag">Selected Project</div>
+          <h2 class="section-title" data-i18n="project_heading">Featured Data Science Project</h2>
+        </div>
+
+        <div class="card project-featured-card">
+          <div class="project-header">
+            <div>
+              <span class="project-badge" data-i18n="project_badge_cv">Computer Vision & Deep Learning</span>
+              <h3 class="project-title" data-i18n="project_name">Road Hazard & Defect Detection System</h3>
+            </div>
+          </div>
+
+          <p class="project-desc" data-i18n="project_summary">
+            Autonomous computer vision system designed to detect potholes, manholes, and cracks on road surfaces in real-time utilizing forward-facing vehicle cameras (front car camera feeds). Enables proactive road maintenance and enhances smart vehicle safety.
+          </p>
+
+          <!-- Technical Pipeline -->
+          <div class="pipeline-container">
+            <div class="pipeline-title" data-i18n="pipeline_heading">End-to-End System Pipeline</div>
+            <div class="pipeline-steps">
+              <div class="pipeline-step">
+                <div class="step-number">STEP 01</div>
+                <div class="step-name" data-i18n="step_1_name">Input Feed</div>
+                <div class="step-desc" data-i18n="step_1_desc">Video frame acquisition via dashboard camera under varying lighting.</div>
+              </div>
+              <div class="pipeline-step">
+                <div class="step-number">STEP 02</div>
+                <div class="step-name" data-i18n="step_2_name">Preprocessing</div>
+                <div class="step-desc" data-i18n="step_2_desc">Noise reduction, normalization, ROI extraction, and contrast adjustment.</div>
+              </div>
+              <div class="pipeline-step">
+                <div class="step-number">STEP 03</div>
+                <div class="step-name" data-i18n="step_3_name">Detection & Classification</div>
+                <div class="step-desc" data-i18n="step_3_desc">Multi-class localization of potholes, manholes, and surface cracks.</div>
+              </div>
+              <div class="pipeline-step">
+                <div class="step-number">STEP 04</div>
+                <div class="step-name" data-i18n="step_4_name">Telemetry & Alerting</div>
+                <div class="step-desc" data-i18n="step_4_desc">Severity indexing and visual bounding-box feedback for road safety.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technologies used in Project -->
+          <div class="project-tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Computer Vision</span>
+            <span class="tech-tag">Image Classification</span>
+            <span class="tech-tag">Machine Learning</span>
+            <span class="tech-tag">Object Detection</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activities & Achievements Section -->
+    <section class="activities-section" id="activities">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" data-i18n="act_tag">Leadership & Experience</div>
+          <h2 class="section-title" data-i18n="act_heading">Activities & Achievements</h2>
+        </div>
+
+        <!-- Spotlight Winner Banner: 1st Place Trophy -->
+        <div class="spotlight-winner-card">
+          <div>
+            <div class="spotlight-badge" data-i18n="spotlight_badge">🏆 1st Place Champion • รางวัลชนะเลิศ</div>
+            <h3 class="spotlight-title" data-i18n="spotlight_title">Creative Wax Castle Parade Contest 2568 (30,000 THB Prize)</h3>
+            <p class="spotlight-desc" data-i18n="spotlight_desc">
+              Awarded 1st Place Trophy and 30,000 THB cash prize by Sakon Nakhon Municipality for directing and constructing the award-winning creative cultural parade structure with the student team.
+            </p>
+            <div class="hero-cta-group">
+              <button type="button" class="btn btn-primary" onclick="openLightbox('pic/1790011233032.jpg', 'Creative Wax Castle Parade 2568 - 1st Place Winner Trophy')">
+                <span data-i18n="spotlight_view_trophy">View Trophy Photo</span> 🏆
+              </button>
+              <button type="button" class="btn btn-secondary" onclick="openLightbox('pic/1790011233667.jpg', 'Parade Development Team with Finished Creative Structure')">
+                <span data-i18n="spotlight_view_team">View Team & Project</span> 👥
+              </button>
+            </div>
+          </div>
+          <div class="spotlight-photo-frame" onclick="openLightbox('pic/1790011233032.jpg', 'Creative Wax Castle Parade 2568 - 1st Place Winner Trophy')">
+            <img src="pic/1790011233032.jpg" alt="1st Place Trophy Award" loading="lazy">
+            <div class="spotlight-photo-overlay">
+              <span>🏆 1st Place Trophy (2568)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Three Core Activity Cards -->
+        <div class="activities-grid">
+          <!-- Student Board -->
+          <div class="card activity-card">
+            <div class="activity-preview-thumb" onclick="openLightbox('pic/1790011232238.jpg', 'Strategic Planning Session - Student Administrative Board')">
+              <span class="activity-thumb-tag">Executive Council</span>
+              <img src="pic/1790011232238.jpg" alt="Student Administrative Board Meeting" loading="lazy">
+            </div>
+            <div class="activity-icon">🏛️</div>
+            <div class="activity-role" data-i18n="act_1_title">Student Administrative Board</div>
+            <div class="activity-period" data-i18n="act_1_period">2568 (2025) – 2569 (2026)</div>
+            <p class="activity-desc" data-i18n="act_1_desc">
+              Served as General Director for the year 2568 (2025) overseeing central student council initiatives, administrative operations, and team coordination. Appointed as Co-Leader for the year 2569 (2026) directing cross-functional executive strategy.
+            </p>
+            <div class="activity-skills-badge">
+              <span class="micro-badge">General Director (2568)</span>
+              <span class="micro-badge">Co-Leader (2569)</span>
+              <span class="micro-badge">Strategic Planning</span>
+              <span class="micro-badge">Leadership</span>
+            </div>
+          </div>
+
+          <!-- Event Staff -->
+          <div class="card activity-card">
+            <div class="activity-preview-thumb" onclick="openLightbox('pic/received_1436870441167572.jpeg', 'Grand Stage & Concert Production - 21st Nontri Esarn Games')">
+              <span class="activity-thumb-tag">Nontri Esarn Games</span>
+              <img src="pic/received_1436870441167572.jpeg" alt="21st Nontri Esarn Games Concert" loading="lazy">
+            </div>
+            <div class="activity-icon">🎤</div>
+            <div class="activity-role" data-i18n="act_2_title">Event Staff & Operations</div>
+            <div class="activity-period" data-i18n="act_2_period">Multidisciplinary Events</div>
+            <p class="activity-desc" data-i18n="act_2_desc">
+              Organized and managed dynamic operations for major events, including high-attendance sporting tournaments, concerts, and live press conferences. Adept at agile problem solving under high pressure.
+            </p>
+            <div class="activity-skills-badge">
+              <span class="micro-badge">Nontri Esarn Games</span>
+              <span class="micro-badge">KUSE RUN 2025</span>
+              <span class="micro-badge">Concert Operations</span>
+              <span class="micro-badge">Crisis Response</span>
+            </div>
+          </div>
+
+          <!-- Pharmaceutical Manufacturing -->
+          <div class="card activity-card">
+            <div class="activity-preview-thumb" onclick="openLightbox('pic/1790011228905.jpg', 'Industrial & Technical Operations Demonstration')">
+              <span class="activity-thumb-tag">Operations</span>
+              <img src="pic/1790011228905.jpg" alt="Technical Workshop Operations" loading="lazy">
+            </div>
+            <div class="activity-icon">💊</div>
+            <div class="activity-role" data-i18n="act_3_title">Pharmaceutical Manufacturing</div>
+            <div class="activity-period" data-i18n="act_3_period">Warehouse & Production Departments</div>
+            <p class="activity-desc" data-i18n="act_3_desc">
+              Hands-on operational experience within both warehouse inventory logistics and manufacturing production departments. Rigorous attention to quality assurance protocols, standardized documentation, and inventory tracking.
+            </p>
+            <div class="activity-skills-badge">
+              <span class="micro-badge">Warehouse Logistics</span>
+              <span class="micro-badge">Production Line</span>
+              <span class="micro-badge">Quality Standards</span>
+              <span class="micro-badge">Inventory Tracking</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full Photo Gallery Section -->
+        <div class="gallery-container" id="gallery">
+          <div class="gallery-header-bar">
+            <div class="gallery-title-box">
+              <h3 data-i18n="gallery_title">Activity & Experience Gallery</h3>
+              <p data-i18n="gallery_subtitle">Click on any picture to view high-resolution details</p>
+            </div>
+
+            <div class="gallery-filters">
+              <button type="button" class="filter-btn active" onclick="filterGallery('all', this)" data-i18n="filter_all">All Photos</button>
+              <button type="button" class="filter-btn" onclick="filterGallery('award', this)" data-i18n="filter_award">1st Place Award</button>
+              <button type="button" class="filter-btn" onclick="filterGallery('board', this)" data-i18n="filter_board">Student Board</button>
+              <button type="button" class="filter-btn" onclick="filterGallery('events', this)" data-i18n="filter_events">Event Staff & Concerts</button>
+            </div>
+          </div>
+
+          <div class="gallery-grid">
+            <!-- Item 1: Award Trophy -->
+            <div class="gallery-item" data-category="award" onclick="openLightbox('pic/1790011233032.jpg', '1st Place Champion Trophy & Prize (30,000 THB) - Creative Wax Castle Parade 2568')">
+              <img src="pic/1790011233032.jpg" alt="1st Place Trophy" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge" data-i18n="badge_award">Award Winner</span>
+                <span class="gallery-item-caption" data-i18n="caption_1">1st Place Champion Trophy & Prize (30,000 THB)</span>
+              </div>
+            </div>
+
+            <!-- Item 2: Wax Castle Team -->
+            <div class="gallery-item" data-category="award" onclick="openLightbox('pic/1790011233667.jpg', 'Parade Structure Development Team with Completed Structure')">
+              <img src="pic/1790011233667.jpg" alt="Development Team" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge" data-i18n="badge_award">Award Project</span>
+                <span class="gallery-item-caption" data-i18n="caption_2">Creative Parade Development Team & Structure</span>
+              </div>
+            </div>
+
+            <!-- Item 3: Castle Construction -->
+            <div class="gallery-item" data-category="award" onclick="openLightbox('pic/1790011230771.jpg', 'Structural Fabrication and Lighting Craftsmanship for Parade Float')">
+              <img src="pic/1790011230771.jpg" alt="Construction Stage" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge" data-i18n="badge_award">Fabrication</span>
+                <span class="gallery-item-caption" data-i18n="caption_3">Structural Craftsmanship & Installation</span>
+              </div>
+            </div>
+
+            <!-- Item 4: Student Board Meeting -->
+            <div class="gallery-item" data-category="board" onclick="openLightbox('pic/1790011232238.jpg', 'Executive Strategy Meeting - Student Administrative Board')">
+              <img src="pic/1790011232238.jpg" alt="Executive Meeting" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge" data-i18n="badge_board">Student Board</span>
+                <span class="gallery-item-caption" data-i18n="caption_4">Executive Strategic Planning Meeting</span>
+              </div>
+            </div>
+
+            <!-- Item 5: Speaking as Leader -->
+            <div class="gallery-item" data-category="board" onclick="openLightbox('pic/1790011228649.jpg', 'Addressing the Assembly as Student Administrative Board Leader')">
+              <img src="pic/1790011228649.jpg" alt="Addressing Council" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge" data-i18n="badge_board">Leadership</span>
+                <span class="gallery-item-caption" data-i18n="caption_5">Addressing the Executive Assembly</span>
+              </div>
+            </div>
+
+            <!-- Item 6: Board Delegation Assembly -->
+            <div class="gallery-item" data-category="board" onclick="openLightbox('pic/1772986252081.jpg', 'Student Administrative Board General Assembly')">
+              <img src="pic/1772986252081.jpg" alt="General Assembly" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge" data-i18n="badge_board">Student Board</span>
+                <span class="gallery-item-caption" data-i18n="caption_6">Board General Delegation Assembly</span>
+              </div>
+            </div>
+
+            <!-- Item 7: Nontri Esarn Games Concert -->
+            <div class="gallery-item" data-category="events" onclick="openLightbox('pic/received_1436870441167572.jpeg', 'Grand Stage & Concert Production - 21st Nontri Esarn Games')">
+              <img src="pic/received_1436870441167572.jpeg" alt="Nontri Esarn Games" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge" data-i18n="badge_events">Concert & Stage</span>
+                <span class="gallery-item-caption" data-i18n="caption_7">21st Nontri Esarn Games Concert Production</span>
+              </div>
+            </div>
+
+            <!-- Item 8: KUSE RUN 2025 -->
+            <div class="gallery-item" data-category="events" onclick="openLightbox('pic/1790011231485.jpg', 'Finish Line Operations & Timing Technical Staff - KUSE RUN 2025')">
+              <img src="pic/1790011231485.jpg" alt="KUSE RUN 2025" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge" data-i18n="badge_events">Sporting Event</span>
+                <span class="gallery-item-caption" data-i18n="caption_8">KUSE RUN 2025 Finish Line Operations</span>
+              </div>
+            </div>
+
+            <!-- Item 9: CSC Staff MC -->
+            <div class="gallery-item" data-category="events" onclick="openLightbox('pic/1758799411128.jpg', 'Master of Ceremonies & Stage Coordination - CSC STAFF 2025')">
+              <img src="pic/1758799411128.jpg" alt="CSC Staff MC" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge" data-i18n="badge_events">Event MC</span>
+                <span class="gallery-item-caption" data-i18n="caption_9">Master of Ceremonies - CSC STAFF 2025</span>
+              </div>
+            </div>
+
+            <!-- Item 10: Sports Referee -->
+            <div class="gallery-item" data-category="events" onclick="openLightbox('pic/1790011229351.jpg', 'Field Referee & Sports Tournament Adjudication')">
+              <img src="pic/1790011229351.jpg" alt="Sports Referee" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge" data-i18n="badge_events">Sports Officiating</span>
+                <span class="gallery-item-caption" data-i18n="caption_10">Tournament Field Referee Adjudication</span>
+              </div>
+            </div>
+
+            <!-- Item 11: Sports Equipment Management -->
+            <div class="gallery-item" data-category="events" onclick="openLightbox('pic/1790011229894.jpg', 'Ceremonial & Field Equipment Management')">
+              <img src="pic/1790011229894.jpg" alt="Equipment Management" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge" data-i18n="badge_events">Field Logistics</span>
+                <span class="gallery-item-caption" data-i18n="caption_11">Field Operations & Ceremonial Equipment</span>
+              </div>
+            </div>
+
+            <!-- Item 12: Backstage Artist Hospitality -->
+            <div class="gallery-item" data-category="events" onclick="openLightbox('pic/1790011228364.jpg', 'Backstage Artist Hospitality & Entertainment Coordination')">
+              <img src="pic/1790011228364.jpg" alt="Backstage Hospitality" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge" data-i18n="badge_events">Concert Backstage</span>
+                <span class="gallery-item-caption" data-i18n="caption_12">Backstage Artist Coordination & Mascot</span>
+              </div>
+            </div>
+
+            <!-- Item 13: Grounds Preparation -->
+            <div class="gallery-item" data-category="events" onclick="openLightbox('pic/DSC08299.JPG', 'Groundwork Logistics & Event Field Measurement')">
+              <img src="pic/DSC08299.JPG" alt="Ground Logistics" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge" data-i18n="badge_events">Field Setup</span>
+                <span class="gallery-item-caption" data-i18n="caption_13">Groundwork Logistics & Precision Measurement</span>
+              </div>
+            </div>
+
+            <!-- Item 14: Auditorium Coordination -->
+            <div class="gallery-item" data-category="board" onclick="openLightbox('pic/IMG_20260920_135450_401.jpg', 'Large Student Camp & Auditorium Coordination')">
+              <img src="pic/IMG_20260920_135450_401.jpg" alt="Auditorium Camp" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge" data-i18n="badge_board">Student Assembly</span>
+                <span class="gallery-item-caption" data-i18n="caption_14">Large Student Orientation Assembly</span>
+              </div>
+            </div>
+
+            <!-- Item 15: Workshop Demonstration -->
+            <div class="gallery-item" data-category="events" onclick="openLightbox('pic/1790011228905.jpg', 'Cultural Workshop & Interactive Exhibition Demonstration')">
+              <img src="pic/1790011228905.jpg" alt="Workshop Demonstration" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-item-badge" data-i18n="badge_events">Workshop</span>
+                <span class="gallery-item-caption" data-i18n="caption_15">Cultural Workshop & Exhibition Booth</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Call to Action -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="card cta-card">
+          <h2 class="cta-title" data-i18n="cta_title">Let's Connect & Collaborate</h2>
+          <p class="cta-desc" data-i18n="cta_desc">
+            I am actively seeking an internship opportunity in Data Science, Machine Learning, or Analytics. I am ready to bring dedication, technical skills, and high learning agility to your team.
+          </p>
+
+          <div class="cta-buttons">
+            <a href="mailto:khoboon.k@ku.th" class="btn btn-primary">
+              <svg style="width: 18px; height: 18px; fill: currentColor;" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <span data-i18n="cta_btn_email">Email: khoboon.k@ku.th</span>
+            </a>
+            <a href="tel:+66983738273" class="btn btn-secondary">
+              <svg style="width: 18px; height: 18px; fill: currentColor;" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span data-i18n="cta_btn_phone">Call: +66 98 373 8273</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-content-wrapper" onclick="event.stopPropagation()">
+      <button type="button" class="lightbox-close-btn" onclick="closeLightbox()" aria-label="Close photo preview">✕</button>
+      <div class="lightbox-img-box">
+        <img id="lightbox-img" src="" alt="Enlarged preview">
+      </div>
+      <div class="lightbox-footer">
+        <span class="lightbox-caption-text" id="lightbox-caption"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-copy">
+        <img src="ku-logo.png" alt="KU" style="width: 22px; height: 22px; vertical-align: middle;">
+        <span>© 2026 Khoboon Kongsri (Henry). Kasetsart University Graduate.</span>
+      </div>
+      <div class="footer-links">
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#skills" data-i18n="nav_skills">Skills</a>
+        <a href="#project" data-i18n="nav_project">Project</a>
+        <a href="#activities" data-i18n="nav_activities">Activities</a>
+        <a href="#gallery" data-i18n="nav_gallery">Photos</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bilingual Dictionary & Interactive Engine -->
+  <script>
+    const translations = {
+      en: {
+        brand_name: "Khoboon Kongsri",
+        brand_role: "Data Science Intern",
+        nav_about: "About",
+        nav_education: "Education",
+        nav_skills: "Skills",
+        nav_project: "Project",
+        nav_activities: "Activities & Achievements",
+        nav_gallery: "Photos",
+        nav_contact: "Contact",
+        hero_status: "Available for Internship",
+        hero_badge: "Kasetsart University Graduate",
+        hero_greeting: "Hi, I'm",
+        hero_name: "Khoboon Kongsri",
+        hero_nickname: "(Henry / อองรี)",
+        hero_role_title: "Aspiring Data Scientist • Machine Learning & Computer Vision",
+        hero_cta_contact: "Contact Me",
+        hero_cta_project: "View Project",
+        hero_cta_gallery: "View Activities",
+        hero_cta_print: "Print / PDF",
+        about_tag: "About Me",
+        about_heading: "Personal Statement & Profile",
+        about_quote: "Hello, my name is Henry, and I am a Kasetsart University graduate. I have prepared this portfolio to seek the internship for a role in the data field. I am a quick learner who is passionate and easy to get along with. I hope you will consider me for the position.",
+        trait_1_title: "Quick Learner",
+        trait_1_sub: "Adapts rapidly to modern stacks",
+        trait_2_title: "Passionate & Driven",
+        trait_2_sub: "Dedicated to actionable insights",
+        trait_3_title: "Team Player",
+        trait_3_sub: "Easy to collaborate and communicate",
+        trait_4_title: "Data-Centric Mindset",
+        trait_4_sub: "AI, ML, and Analytics focus",
+        edu_tag: "Education",
+        edu_heading: "Academic Background",
+        edu_degree: "University Graduate",
+        edu_school: "Kasetsart University (มหาวิทยาลัยเกษตรศาสตร์)",
+        edu_desc: "Graduated with strong foundations in quantitative analytical techniques, computer vision, data modeling, and practical problem-solving. Actively engaged in student leadership and real-world applied technical projects.",
+        skills_tag: "Technical Arsenal",
+        skills_heading: "Key Skills & Tools",
+        skill_cat_ml: "Machine Learning & AI",
+        skill_cat_query: "Data Querying & Analysis",
+        skill_cat_bi: "Business Intelligence & Viz",
+        project_tag: "Selected Project",
+        project_heading: "Featured Data Science Project",
+        project_badge_cv: "Computer Vision & Deep Learning",
+        project_name: "Road Hazard & Defect Detection System",
+        project_summary: "Autonomous computer vision system designed to detect potholes, manholes, and cracks on road surfaces in real-time utilizing forward-facing vehicle cameras (front car camera feeds). Enables proactive road maintenance and enhances smart vehicle safety.",
+        pipeline_heading: "End-to-End System Pipeline",
+        step_1_name: "Input Feed",
+        step_1_desc: "Video frame acquisition via dashboard camera under varying lighting.",
+        step_2_name: "Preprocessing",
+        step_2_desc: "Noise reduction, normalization, ROI extraction, and contrast adjustment.",
+        step_3_name: "Detection & Classification",
+        step_3_desc: "Multi-class localization of potholes, manholes, and surface cracks.",
+        step_4_name: "Telemetry & Alerting",
+        step_4_desc: "Severity indexing and visual bounding-box feedback for road safety.",
+        act_tag: "Leadership & Experience",
+        act_heading: "Activities & Achievements",
+        spotlight_badge: "🏆 1st Place Champion • รางวัลชนะเลิศ",
+        spotlight_title: "Creative Wax Castle Parade Contest 2568 (30,000 THB Prize)",
+        spotlight_desc: "Awarded 1st Place Trophy and 30,000 THB cash prize by Sakon Nakhon Municipality for directing and constructing the award-winning creative cultural parade structure with the student team.",
+        spotlight_view_trophy: "View Trophy Photo",
+        spotlight_view_team: "View Team & Project",
+        act_1_title: "Student Administrative Board",
+        act_1_period: "2568 (2025) – 2569 (2026)",
+        act_1_desc: "Served as General Director for the year 2568 (2025) overseeing central student council initiatives, administrative operations, and team coordination. Appointed as Co-Leader for the year 2569 (2026) directing cross-functional executive strategy.",
+        act_2_title: "Event Staff & Operations",
+        act_2_period: "Multidisciplinary Events",
+        act_2_desc: "Organized and managed dynamic operations for major events, including high-attendance sporting tournaments, concerts, and live press conferences. Adept at agile problem solving under high pressure.",
+        act_3_title: "Pharmaceutical Manufacturing",
+        act_3_period: "Warehouse & Production Departments",
+        act_3_desc: "Hands-on operational experience within both warehouse inventory logistics and manufacturing production departments. Rigorous attention to quality assurance protocols, standardized documentation, and inventory tracking.",
+        gallery_title: "Activity & Experience Gallery",
+        gallery_subtitle: "Click on any picture to view high-resolution details",
+        filter_all: "All Photos",
+        filter_award: "1st Place Award",
+        filter_board: "Student Board",
+        filter_events: "Event Staff & Concerts",
+        badge_award: "Award Winner",
+        badge_board: "Student Board",
+        badge_events: "Event Staff",
+        caption_1: "1st Place Champion Trophy & Prize (30,000 THB)",
+        caption_2: "Creative Parade Development Team & Structure",
+        caption_3: "Structural Craftsmanship & Installation",
+        caption_4: "Executive Strategic Planning Meeting",
+        caption_5: "Addressing the Executive Assembly",
+        caption_6: "Board General Delegation Assembly",
+        caption_7: "21st Nontri Esarn Games Concert Production",
+        caption_8: "KUSE RUN 2025 Finish Line Operations",
+        caption_9: "Master of Ceremonies - CSC STAFF 2025",
+        caption_10: "Tournament Field Referee Adjudication",
+        caption_11: "Field Operations & Ceremonial Equipment",
+        caption_12: "Backstage Artist Coordination & Mascot",
+        caption_13: "Groundwork Logistics & Precision Measurement",
+        caption_14: "Large Student Orientation Assembly",
+        caption_15: "Cultural Workshop & Exhibition Booth",
+        cta_title: "Let's Connect & Collaborate",
+        cta_desc: "I am actively seeking an internship opportunity in Data Science, Machine Learning, or Analytics. I am ready to bring dedication, technical skills, and high learning agility to your team.",
+        cta_btn_email: "Email: khoboon.k@ku.th",
+        cta_btn_phone: "Call: +66 98 373 8273"
+      },
+      th: {
+        brand_name: "ก่อบุญ คงศรี",
+        brand_role: "นักศึกษาฝึกงานด้านวิทยาศาสตร์ข้อมูล",
+        nav_about: "เกี่ยวกับฉัน",
+        nav_education: "การศึกษา",
+        nav_skills: "ทักษะและความสามารถ",
+        nav_project: "ผลงานโปรเจกต์",
+        nav_activities: "กิจกรรมและผลงาน",
+        nav_gallery: "ประมวลภาพกิจกรรม",
+        nav_contact: "ติดต่อ",
+        hero_status: "พร้อมสำหรับการฝึกงาน",
+        hero_badge: "บัณฑิตมหาวิทยาลัยเกษตรศาสตร์",
+        hero_greeting: "สวัสดีครับ ผม",
+        hero_name: "ก่อบุญ คงศรี",
+        hero_nickname: "(อองรี / Henry)",
+        hero_role_title: "ผู้มุ่งมั่นในสายงานวิทยาศาสตร์ข้อมูล • Machine Learning & Computer Vision",
+        hero_cta_contact: "ติดต่อฉัน",
+        hero_cta_project: "ดูผลงานโปรเจกต์",
+        hero_cta_gallery: "ชมภาพกิจกรรม",
+        hero_cta_print: "พิมพ์ / บันทึก PDF",
+        about_tag: "เกี่ยวกับฉัน",
+        about_heading: "ประวัติส่วนตัวและความมุ่งมั่น",
+        about_quote: "สวัสดีครับ ผมชื่ออองรีเป็นบัณฑิตจบใหม่จากมหาวิทยาลัยเกษตรศาสตร์ ผมจัดทำแฟ้มสะสมผลงาน นี้ขึ้นเพื่อสมัครงานในสายงานด้านข้อมูล ผมเป็นคนเรียนรู้เร็ว มีความมุ่งมั่นตั้งใจ และเข้ากับผู้อื่นได้ง่าย หวังเป็นอย่างยิ่งว่าท่านจะพิจารณารับผมเข้าทำงานในตำแหน่งนี้ครับ",
+        trait_1_title: "เรียนรู้เร็ว (Quick Learner)",
+        trait_1_sub: "พร้อมปรับตัวเข้ากับเทคโนโลยีและโจทย์ใหม่ๆ ได้ไว",
+        trait_2_title: "มุ่งมั่นตั้งใจ (Passionate & Driven)",
+        trait_2_sub: "ทุ่มเทในการวิเคราะห์ข้อมูลเพื่อสร้างผลลัพธ์ที่มีคุณค่า",
+        trait_3_title: "เข้ากับผู้อื่นได้ง่าย (Team Player)",
+        trait_3_sub: "สื่อสารและทำงานร่วมกับทีมได้อย่างราบรื่น",
+        trait_4_title: "ขับเคลื่อนด้วยข้อมูล (Data-Centric)",
+        trait_4_sub: "เน้นการประยุกต์ใช้ AI, ML และการวิเคราะห์เชิงลึก",
+        edu_tag: "ประวัติด้านการศึกษา",
+        edu_heading: "การศึกษา",
+        edu_degree: "บัณฑิตจบใหม่",
+        edu_school: "มหาวิทยาลัยเกษตรศาสตร์ (Kasetsart University)",
+        edu_desc: "สำเร็จการศึกษาจากมหาวิทยาลัยเกษตรศาสตร์ พร้อมพื้นฐานที่เข้มแข็งด้านการวิเคราะห์ข้อมูลเชิงปริมาณ, Computer Vision, การสร้างแบบจำลองข้อมูล และการแก้ปัญหาจริง ควบคู่กับประสบการณ์ผู้นำในองค์กรนิสิต",
+        skills_tag: "คลังทักษะและเครื่องมือ",
+        skills_heading: "ทักษะและความสามารถหลัก (Key Skills & Tools)",
+        skill_cat_ml: "Machine Learning & ปัญญาประดิษฐ์",
+        skill_cat_query: "การสืบค้นและจัดการข้อมูล",
+        skill_cat_bi: "การแสดงผลข้อมูลและ Business Intelligence",
+        project_tag: "ผลงานเด่น",
+        project_heading: "โปรเจกต์ด้านวิทยาศาสตร์ข้อมูล (Data Science Project)",
+        project_badge_cv: "Computer Vision & Deep Learning",
+        project_name: "ระบบตรวจจับหลุม ท่อระบายน้ำ และรอยแตกบนพื้นผิวถนนด้วยกล้องหน้ารถยนต์",
+        project_summary: "การประยุกต์ใช้โมเดล Computer Vision ในการตรวจจับและจำแนกความเสียหายบนพื้นผิวถนน ได้แก่ หลุม (Pothole), ฝาท่อระบายน้ำ (Manhole) และรอยแตก (Crack) แบบเรียลไทม์จากภาพและวิดีโอกล้องหน้ารถยนต์ เพื่อสนับสนุนการซ่อมบำรุงทางหลวงและความปลอดภัยในการขับขี่",
+        pipeline_heading: "สถาปัตยกรรมและขั้นตอนการทำงานของระบบ (Pipeline)",
+        step_1_name: "รับสัญญาณภาพ (Input)",
+        step_1_desc: "ดึงเฟรมวิดีโอจากกล้องหน้ารถยนต์ในสภาวะแสงและสภาพแวดล้อมที่หลากหลาย",
+        step_2_name: "การเตรียมข้อมูลภาพ (Preprocessing)",
+        step_2_desc: "ลดสัญญาณรบกวน ปรับสมดุลคอนทราสต์ และกำหนดขอบเขตพื้นที่ถนน (ROI)",
+        step_3_name: "ตรวจจับและจำแนก (Detection & Classification)",
+        step_3_desc: "ระบุพิกัดและจำแนกประเภทหลุม ฝาท่อระบายน้ำ และรอยแตกร้าว",
+        step_4_name: "ประเมินระดับและแจ้งเตือน (Alerting)",
+        step_4_desc: "คำนวณระดับความเสี่ยงและส่งต่อพิกัดเตือนผู้ขับขี่หรือแจ้งศูนย์ซ่อมบำรุง",
+        act_tag: "ความเป็นผู้นำและประสบการณ์",
+        act_heading: "กิจกรรมและผลงาน (Activities & Achievements)",
+        spotlight_badge: "🏆 1st Place Champion • รางวัลชนะเลิศ",
+        spotlight_title: "การประกวดขบวนแห่ปราสาทผึ้งสร้างสรรค์ ประจำปี 2568 (เงินรางวัล 30,000 บาท)",
+        spotlight_desc: "ได้รับรางวัลชนะเลิศ พร้อมถ้วยรางวัลเกียรติยศและเงินรางวัล 30,000 บาท จากเทศบาลนครสกลนคร ในการนำทีมและร่วมสร้างสรรค์ขบวนแห่ปราสาทผึ้งสร้างสรรค์",
+        spotlight_view_trophy: "ชมภาพถ้วยรางวัล",
+        spotlight_view_team: "ชมภาพทีมงานและผลงาน",
+        act_1_title: "คณะกรรมการบริหารองค์การบริหารนิสิต (Student Administrative Board)",
+        act_1_period: "ปี พ.ศ. 2568 – 2569",
+        act_1_desc: "ปฏิบัติหน้าที่ในตำแหน่ง ผู้อำนวยการทั่วไป (General Director) ประจำปี 2568 ดูแลการบริหารงาน วางแผนงานส่วนกลาง และการประสานงาน และได้รับแต่งตั้งเป็น Co-Leader ประจำปี 2569 ขับเคลื่อนยุทธศาสตร์และบริหารทีมงานนิสิต",
+        act_2_title: "ทีมงานจัดกิจกรรมและอีเวนต์ (Event Staff)",
+        act_2_period: "งานแข่งขันกีฬา คอนเสิร์ต และงานแถลงข่าว",
+        act_2_desc: "ปฏิบัติหน้าที่ทีมงานดำเนินงานในอีเวนต์ระดับใหญ่ เช่น การแข่งขันกีฬา, งานคอนเสิร์ต และงานแถลงข่าว ดูแลความเรียบร้อย การแก้ปัญหาเฉพาะหน้า และการทำงานร่วมกันภายใต้ความกดดัน",
+        act_3_title: "ประสบการณ์ในโรงงานผลิตยา (Pharmaceutical Manufacturing)",
+        act_3_period: "ฝ่ายคลังสินค้า (Warehouse) และฝ่ายผลิต (Production)",
+        act_3_desc: "สั่งสมประสบการณ์การทำงานจริงในฝ่ายคลังสินค้าและฝ่ายผลิตของโรงงานผลิตยา ปฏิบัติตามมาตรฐานการควบคุมคุณภาพที่เข้มงวด การบันทึกข้อมูลอย่างเป็นระบบ และการบริหารสินค้าคงคลัง",
+        gallery_title: "ประมวลภาพกิจกรรมและผลงาน (Activity Gallery)",
+        gallery_subtitle: "คลิกที่ภาพเพื่อดูรายละเอียดภาพขนาดใหญ่",
+        filter_all: "ทั้งหมด",
+        filter_award: "รางวัลชนะเลิศ",
+        filter_board: "องค์การบริหารนิสิต",
+        filter_events: "อีเวนต์และคอนเสิร์ต",
+        badge_award: "รางวัลชนะเลิศ",
+        badge_board: "องค์การบริหารนิสิต",
+        badge_events: "ทีมงานจัดกิจกรรม",
+        caption_1: "รางวัลชนะเลิศ การประกวดขบวนแห่ปราสาทผึ้งสร้างสรรค์ 2568",
+        caption_2: "ทีมงานนิสิตผู้สร้างสรรค์ขบวนแห่ปราสาทผึ้ง",
+        caption_3: "การลงมือสร้างโครงสร้างและตกแต่งสถาปัตยกรรมขบวนแห่",
+        caption_4: "การประชุมยุทธศาสตร์ร่วมกับคณะกรรมการบริหารองค์การนิสิต",
+        caption_5: "กล่าวเปิดการประชุมในฐานะผู้นำองค์การบริหารนิสิต",
+        caption_6: "ภาพรวมคณะกรรมการบริหารองค์การบริหารนิสิต",
+        caption_7: "ทีมงานโปรดักชันเวทีคอนเสิร์ต กีฬานนทรีอีสานสัมพันธ์ ครั้งที่ 21",
+        caption_8: "ฝ่ายเทคนิคและควบคุมเส้นชัย งานวิ่ง KUSE RUN 2025",
+        caption_9: "พิธีกรและผู้ประสานงานเวทีกลาง CSC STAFF 2025",
+        caption_10: "กรรมการตัดสินและควบคุมการแข่งขันกีฬาในสนาม",
+        caption_11: "การจัดการอุปกรณ์และลำดับพิธีการในงานแข่งขันกีฬา",
+        caption_12: "การประสานงานศิลปินและฝ่ายดูแลหลังเวทีงานคอนเสิร์ต",
+        caption_13: "การวัดพื้นที่และเตรียมสถานที่สำหรับการจัดกิจกรรมกลางแจ้ง",
+        caption_14: "การจัดกิจกรรมปฐมนิเทศและค่ายนิสิตในหอประชุมใหญ่",
+        caption_15: "การจัดซุ้มกิจกรรมและสาธิตเวิร์กช็อปเชิงวัฒนธรรม",
+        cta_title: "พร้อมสำหรับการร่วมงานและแลกเปลี่ยนข้อมูล",
+        cta_desc: "ผมมีความพร้อมและกระตือรือร้นในการเข้ารับการฝึกงานในตำแหน่ง Data Scientist เพื่อนำความรู้ ความมุ่งมั่น และความสามารถในการเรียนรู้เร็วไปร่วมสร้างประโยชน์ให้กับองค์กรของคุณ",
+        cta_btn_email: "อีเมล: khoboon.k@ku.th",
+        cta_btn_phone: "โทรศัพท์: +66 98 373 8273"
+      }
+    };
+
+    let currentLang = 'en';
+
+    function setLanguage(lang) {
+      if (!translations[lang]) return;
+      currentLang = lang;
+
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-th').classList.toggle('active', lang === 'th');
+      document.documentElement.setAttribute('lang', lang);
+
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      if (lang === 'th') {
+        document.title = "แฟ้มสะสมผลงาน ก่อบุญ คงศรี (อองรี) | Data Scientist Intern";
+      } else {
+        document.title = "Khoboon Kongsri (Henry) | Data Scientist Intern Portfolio";
+      }
+
+      try {
+        localStorage.setItem('portfolio_lang', lang);
+      } catch (e) {}
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const nextTheme = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', nextTheme);
+      document.getElementById('theme-icon').textContent = nextTheme === 'dark' ? '🌙' : '☀️';
+
+      try {
+        localStorage.setItem('portfolio_theme', nextTheme);
+      } catch (e) {}
+    }
+
+    /* Lightbox Functions */
+    function openLightbox(src, caption) {
+      const modal = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-caption');
+      img.src = src;
+      cap.textContent = caption;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      if (e && e.target && e.target.id === 'lightbox-img') return;
+      const modal = document.getElementById('lightbox');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+
+    /* Gallery Filter */
+    function filterGallery(category, btn) {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const items = document.querySelectorAll('.gallery-item');
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const urlLang = params.get('lang');
+      const savedLang = localStorage.getItem('portfolio_lang');
+      
+      if (urlLang && (urlLang === 'th' || urlLang === 'en')) {
+        setLanguage(urlLang);
+      } else if (savedLang && (savedLang === 'th' || savedLang === 'en')) {
+        setLanguage(savedLang);
+      } else {
+        setLanguage('en');
+      }
+
+      const savedTheme = localStorage.getItem('portfolio_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.getElementById('theme-icon').textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+    });
+  </script>
+</body>
+</html>
